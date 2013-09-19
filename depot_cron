@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "tache cron du depot"
