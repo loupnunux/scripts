@@ -6,3 +6,6 @@ echo "GITHUB pull"
 cd /home/.loupnunux/scripts
 git pull
 
+echo "execution du script : linux-postinstall"
+/home/.loupnunux/scripts/linux-postinstall/main.sh
+
