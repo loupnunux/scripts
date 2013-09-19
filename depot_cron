@@ -1,3 +1,8 @@
 #!/bin/bash
 
 echo "tache cron du depot"
+
+echo "GITHUB pull"
+cd /home/.loupnunux/scripts
+git pull
+
