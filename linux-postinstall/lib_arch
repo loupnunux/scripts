@@ -1,0 +1,9 @@
+arch_modules() {
+
+  echo -e "$2" > /etc/modules-load.d/$1.conf
+
+}
+
+
+
+
