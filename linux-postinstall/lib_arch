@@ -1,9 +1,20 @@
 arch_modules() {
 
-  echo -e "$2" > /etc/modules-load.d/$1.conf
+  grep "$2" /etc/modules-load.d/$1.conf
+  if [ $? != 0 ]; then
+    echo -e "/n$2" >> /etc/modules-load.d/$1.conf
+  fi
 
 }
 
+
+
+arch_service() {
+
+  systemctl start $1
+  systemctl enable $1
+
+}
 
 
 
