@@ -18,3 +18,17 @@ arch_service() {
 
 
 
+arch_testpck() {
+
+  for i in ${1}; do
+    if [ "$(echo $(sudo yaourt -Ss $i | grep "/$i ") | grep "installed")" != "" ]
+      PKG="$PKG $i"
+    fi
+  done
+
+  sudo yaourt --sucre $PKG
+
+
+#echo $(sudo yaourt -Ss $TEST | grep "/$TEST ") | grep "installed"
+}
+

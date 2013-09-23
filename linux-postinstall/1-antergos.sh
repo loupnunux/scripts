@@ -19,6 +19,6 @@ arch_service cronie
 # Pour teamview
 arch_service "teamviewerd.service"
 
-
+arch_testpck "toto titi git firefox"
 
 
