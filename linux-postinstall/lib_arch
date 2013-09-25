@@ -1,3 +1,21 @@
+### Librairie pour Archlinux
+###########################################
+#
+#  arch_modules 
+#      arch_modules "virtualbox" "vboxdrv"
+#
+#
+#  arch_service
+#      arch_service "dkms.service"
+#
+#
+#  arch_testpck
+#      arch_testpck "git vim"
+#
+#
+
+
+
 arch_modules() {
 
   grep "$2" /etc/modules-load.d/$1.conf
@@ -21,7 +39,7 @@ arch_service() {
 arch_testpck() {
 
   for i in ${1}; do
-    if [ "$(echo $(sudo yaourt -Ss $i | grep "/$i ") | grep "installed")" != "" ]
+    if [ "$(echo $(sudo yaourt -Ss $i | grep "/$i ") | grep "installed")" != "" ]; then
       PKG="$PKG $i"
     fi
   done
