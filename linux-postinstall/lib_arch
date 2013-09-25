@@ -20,8 +20,10 @@ arch_modules() {
 
   grep "$2" /etc/modules-load.d/$1.conf
   if [ $? != 0 ]; then
-    echo -e "/n$2" >> /etc/modules-load.d/$1.conf
+    echo -e "$2" >> /etc/modules-load.d/$1.conf
   fi
+
+  modprobe $2
 
 }
 
