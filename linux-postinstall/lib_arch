@@ -1,33 +1,54 @@
-arch_modules() {
+### Librairie pour Archlinux
+###########################################
+#
+#  arch_modules 
+#      arch_modules "virtualbox" "vboxdrv"
+#
+#
+#  arch_service
+#      arch_service "dkms.service"
+#
+#
+#  arch_testpck
+#      arch_testpck "git vim"
+#
+#
 
+
+
+arch_modules() {
   grep "$2" /etc/modules-load.d/$1.conf
   if [ $? != 0 ]; then
-    echo -e "/n$2" >> /etc/modules-load.d/$1.conf
+    echo -e "$2" >> /etc/modules-load.d/$1.conf
   fi
 
+  modprobe $2
 }
 
 
 
 arch_service() {
-
   systemctl start $1
   systemctl enable $1
-
 }
 
 
 
 arch_testpck() {
-
   for i in ${1}; do
-    if [ "$(echo $(sudo yaourt -Ss $i | grep "/$i ") | grep "installed")" != "" ]
-      PKG="$PKG $i"
+    if [ ! -z "$(echo $(sudo yaourt -Ss $i 2> /dev/null | grep "/$i ") | grep "installed")" ]; then
+      PKG_N="$PKG_N $i"
+    elif [ ! -z "$(echo $(sudo yaourt -Ss $i 2> /dev/null | grep "/$i ") | grep -v "installed")" ]; then
+      PKG_Y="$PKG_Y $i"
+    else
+      PKG_E="$PKG_E $i"
     fi
   done
 
-  sudo yaourt --sucre $PKG
-
+#  sudo yaourt --sucre $PKG
+echo -e "les paquets suivants sont deja installes :\n$PKG_N"
+echo -e "les paquets suivants ne sont pas installes :\n$PKG_Y"
+echo -e "les paquets suivants n'existent pas :\n$PKG_E"
 
 #echo $(sudo yaourt -Ss $TEST | grep "/$TEST ") | grep "installed"
 }

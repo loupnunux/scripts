@@ -1,0 +1,50 @@
+
+
+
+######################
+###          VARIABLES
+###            Paquets
+
+PKG_PACMAN_YAOURT="base-devel yaourt"
+
+PKG_PACMAN_BASE="git htop gvfs-smb linux-headers motion openssh openssh-askpass screen unison vim zsh"
+PKG_YAOURT_BASE="puppet rabbitvcs rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar"
+
+PKG_PACMAN_DESKTOP="gparted terminator truecrypt"
+PKG_YAOURT_DESKTOP="furiusisomount jre keepass multisystem peazip-gtk2 pencil"
+# a supprimer : rexloader-svn
+
+PKG_PACMAN_EDUC="gcompris gcompris-data kdeedu-kanagram kdeedu-kgeography kdegames-ktuberling tuxpaint tuxpaint-config tuxpaint-stamps"
+PKG_YAOURT_EDUC="childsplay childsplay-alphabet-sounds gamine pysycache pysycache-lang-fr"
+
+PKG_PACMAN_GNOME="gnome-shell-extensions gnome-tweak-tool"
+
+PKG_PACMAN_GRAPHIC="blender darktable digikam eog eog-plugins gimp gimp-plugin-gmic"
+PKG_YAOURT_GRAPHIC="makehuman tbo"
+
+PKG_PACMAN_INTERNET="filezilla firefox firefox-i18n-fr remmina skype thunderbird thunderbird-i18n-fr"
+PKG_YAOURT_INTERNET="pacmanager remmina-plugin-teamviewer teamviewer"
+
+PKG_PACMAN_JEUX="0ad multilib/lib32-libtxc_dxtn playonlinux steam stuntrally urbanterror warsow"
+PKG_YAOURT_JEUX="wakfu"
+
+PKG_PACMAN_MEDIA="audacity avidemux-gtk gtk-recordmydesktop openshot pitivi recordmydesktop vlc xbmc"
+PKG_YAOURT_MEDIA="kazam qmplay2 stopmotion"
+
+PKG_PACMAN_MTP="libmtp mtpfs"
+PKG_YAOURT_MTP="gmtp"
+
+PKG_PACMAN_NVIDIA="lib32-nvidia-libgl lib32-nvidia-utils nvidia"
+
+PKG_PACMAN_PRINT="cups hplip system-config-printer"
+
+PKG_PACMAN_PORTABLE="acpid gnome-power-manager laptop-mode-tools pm-utils"
+
+PKG_PACMAN_XFCE="thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman"
+PKG_YAOURT_XFCE="tumbler-git"
+
+PKG_PACMAN_VIRTUAL="virtualbox virtualbox-host-dkms virtualbox-host-modules virtualbox-sdk"
+PKG_YAOURT_VIRTUAL="virt-manager-git"
+
+PKG_PACMAN_WINE="wine"
+
