@@ -20,6 +20,8 @@ f_install() {
   arch_testpck "$PKG_PACMAN"
   arch_testpck "$PKG_YAOURT"
 
+  sudo yaourt --sucre $PKG_YES
+
   f_virtualbox
   f_cronie
   f_teamview

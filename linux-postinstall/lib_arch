@@ -37,19 +37,16 @@ arch_service() {
 arch_testpck() {
   for i in ${1}; do
     if [ ! -z "$(echo $(sudo yaourt -Ss $i 2> /dev/null | grep "/$i ") | grep "installed")" ]; then
-      PKG_N="$PKG_N $i"
+      PKG_NO="$PKG_NO $i"
     elif [ ! -z "$(echo $(sudo yaourt -Ss $i 2> /dev/null | grep "/$i ") | grep -v "installed")" ]; then
-      PKG_Y="$PKG_Y $i"
+      PKG_YES="$PKG_YES $i"
     else
-      PKG_E="$PKG_E $i"
+      PKG_UNABLE="$PKG_UNABLE $i"
     fi
   done
 
-#  sudo yaourt --sucre $PKG
-echo -e "les paquets suivants sont deja installes :\n$PKG_N"
-echo -e "les paquets suivants ne sont pas installes :\n$PKG_Y"
-echo -e "les paquets suivants n'existent pas :\n$PKG_E"
-
-#echo $(sudo yaourt -Ss $TEST | grep "/$TEST ") | grep "installed"
+#  echo -e "les paquets suivants sont deja installes :\n$PKG_NO"
+#  echo -e "les paquets suivants ne sont pas installes :\n$PKG_YES"
+#  echo -e "les paquets suivants n'existent pas :\n$PKG_UNABLE"
 }
 
