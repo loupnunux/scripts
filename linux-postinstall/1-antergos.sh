@@ -15,8 +15,8 @@ INFO=$REP_SCR/$HOSTNAME.info
 
 ######################
 ###            SOURCES
-source ./lib_arch
-source ./2-antergos-params
+source $REP_SCR/lib_arch
+source $REP_SCR/2-antergos-params
 
 
 
