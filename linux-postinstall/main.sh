@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "test"
+sudo 1-antergos.sh

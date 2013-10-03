@@ -88,6 +88,12 @@ f_cronie() {
 
 
 
+f_ssh() {
+  arch_service sshd
+}
+
+
+
 f_teamview() {
   if [ -e /usr/bin/teamviewer ]; then
     arch_service "teamviewerd.service"
@@ -97,16 +103,11 @@ f_teamview() {
 
 
 f_fin() {
-# on determine la ligne
-#  LIGNE_VMAJ=$(sed -n '/LAST_VMAJ=/=' $INFO)
   if [ -z $LAST_VMAJ ]; then
     echo "LAST_VMAJ=$VMAJ" >> $INFO
   elif [ "$LAST_VMAJ" != "$VMAJ" ]; then
 #   on change la ligne
     sed -i 's/^LAST_VMAJ=.*$/LAST_VMAJ='$VMAJ'/g' $INFO
-#    sed -r 's/^istest=.*$/istest=true/g'
-#    sed $LIGNE_VMAJ's/.*/LAST_VMAJ='$VMAJ'/' $INFO
-#    sed $LIGNE_VMAJ s/.*/LAST_VMAJ=$VMAJ/ $INFO 
   fi
 }
 
@@ -114,29 +115,10 @@ f_fin() {
 
 
 
-<<<<<<< HEAD
-=======
-# Pour ssh
-arch_service sshd
 
-
-# Pour cron
-arch_service cronie
->>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
-
-
-
-<<<<<<< HEAD
 ######################
 ###             SCRIPT
 f_version
-=======
-
-
-
-
-arch_testpck "toto titi git firefox"
->>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
 
 exit 1
 

@@ -15,11 +15,7 @@
 #
 
 
-<<<<<<< HEAD
-=======
 
-arch_modules() {
->>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
 
 arch_modules() {
   grep "$2" /etc/modules-load.d/$1.conf
@@ -28,10 +24,6 @@ arch_modules() {
   fi
 
   modprobe $2
-<<<<<<< HEAD
-=======
-
->>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
 }
 
 
@@ -45,17 +37,12 @@ arch_service() {
 
 arch_testpck() {
   for i in ${1}; do
-<<<<<<< HEAD
     if [ ! -z "$(echo $(sudo yaourt -Ss $i 2> /dev/null | grep "/$i ") | grep "installed")" ]; then
       PKG_NO="$PKG_NO $i"
     elif [ ! -z "$(echo $(sudo yaourt -Ss $i 2> /dev/null | grep "/$i ") | grep -v "installed")" ]; then
       PKG_YES="$PKG_YES $i"
     else
       PKG_UNABLE="$PKG_UNABLE $i"
-=======
-    if [ "$(echo $(sudo yaourt -Ss $i | grep "/$i ") | grep "installed")" != "" ]; then
-      PKG="$PKG $i"
->>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
     fi
   done
 
