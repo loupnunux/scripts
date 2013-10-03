@@ -114,12 +114,29 @@ f_fin() {
 
 
 
+<<<<<<< HEAD
+=======
+# Pour ssh
+arch_service sshd
+
+
+# Pour cron
+arch_service cronie
+>>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
 
 
 
+<<<<<<< HEAD
 ######################
 ###             SCRIPT
 f_version
+=======
+
+
+
+
+arch_testpck "toto titi git firefox"
+>>>>>>> e78685bee708fffd41a1dae2835f94b00d366379
 
 exit 1
 
