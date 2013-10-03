@@ -6,6 +6,7 @@ Utilisation
 ===========
 
 sudo mkdir -p /home/.loupnunux
+sudo chmod -R 777 /home/.loupnunux
 
 cd /home/.loupnunux
 
