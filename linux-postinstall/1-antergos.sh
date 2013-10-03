@@ -1,5 +1,15 @@
 #!/bin/bash
 
+
+######################
+##          VARIABLES
+INFO=/home/.loupnunux/scripts/linux-postinstall/$HOSTNAME.info
+
+
+
+
+
+
 ######################
 ###            SOURCES
 source ./lib_arch
@@ -8,8 +18,26 @@ source ./2-antergos-params
 
 
 
+
 ######################
 ###          FONCTIONS
+f_version(){
+  if [ ! -e $INFO ]; then
+    touch $INFO
+  else
+    source $INFO
+#   on determine la nouvelle version
+    VMAJ=$(ls -l --full-time 1-antergos.sh | cut -d " " -f6)-$(ls -l --full-time 1-antergos.sh | cut -d " " -f7)
+    if [ "$VMAJ" == "$LAST_VMAJ" ]; then
+      exit 1
+    fi
+  fi
+#  f_install
+  f_fin
+}
+
+
+
 f_install() {
   f_pkg
 
@@ -20,17 +48,23 @@ f_install() {
   arch_testpck "$PKG_PACMAN"
   arch_testpck "$PKG_YAOURT"
 
-  sudo yaourt --sucre $PKG_YES
+  if [ ! -z "$PKG_YES" ]; then
+    sudo yaourt --sucre $PKG_YES
+  fi
 
   f_virtualbox
   f_cronie
   f_teamview
+
+  f_fin
 }
 
 
 
 f_pkg() {
-  PKG_PACMAN="$PKG_PACMAN_BASE $PKG_PACMAN_DESKTOP $PKG_PACMAN_EDUC $PKG_PACMAN_GNOME $PKG_PACMAN_GRAPHIC $PKG_PACMAN_INTERNET $PKG_PACMAN_JEUX $PKG_PACMAN_MEDIA $PKG_PACMAN_MTP $PKG_PACMAN_NVIDIA $PKG_PACMAN_PRINT $PKG_PACMAN_PORTABLE $PKG_PACMAN_XFCE $PKG_PACMAN_VIRTUAL $PKG_PACMAN_WINE"
+  PKG_PACMAN="$PKG_PACMAN_BASE $PKG_PACMAN_DESKTOP $PKG_PACMAN_EDUC $PKG_PACMAN_GNOME $PKG_PACMAN_GRAPHIC $PKG_PACMAN_INTERNET $PKG_PACMAN_JEUX $PKG_PACMAN_MEDIA $PKG_PACMAN_MTP $PKG_PACMAN_NVIDIA $PKG_PACMAN_PRINT $PKG_PACMAN_XFCE $PKG_PACMAN_VIRTUAL $PKG_PACMAN_WINE"
+
+#$PKG_PACMAN_PORTABLE
 
   PKG_YAOURT="$PKG_YAOURT_BASE $PKG_YAOURT_DESKTOP $PKG_YAOURT_EDUC $PKG_YAOURT_GRAPHIC $PKG_YAOURT_INTERNET $PKG_YAOURT_JEUX $PKG_YAOURT_MEDIA $PKG_YAOURT_MTP $PKG_YAOURT_XFCE $PKG_YAOURT_VIRTUAL"
 }
@@ -62,7 +96,19 @@ f_teamview() {
 
 
 
-
+f_fin() {
+# on determine la ligne
+#  LIGNE_VMAJ=$(sed -n '/LAST_VMAJ=/=' $INFO)
+  if [ -z $LAST_VMAJ ]; then
+    echo "LAST_VMAJ=$VMAJ" >> $INFO
+  elif [ "$LAST_VMAJ" != "$VMAJ" ]; then
+#   on change la ligne
+    sed -i 's/^LAST_VMAJ=.*$/LAST_VMAJ='$VMAJ'/g' $INFO
+#    sed -r 's/^istest=.*$/istest=true/g'
+#    sed $LIGNE_VMAJ's/.*/LAST_VMAJ='$VMAJ'/' $INFO
+#    sed $LIGNE_VMAJ s/.*/LAST_VMAJ=$VMAJ/ $INFO 
+  fi
+}
 
 
 
@@ -73,7 +119,7 @@ f_teamview() {
 
 ######################
 ###             SCRIPT
-f_install
+f_version
 
 exit 1
 
