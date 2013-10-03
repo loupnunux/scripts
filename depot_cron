@@ -1,11 +1,16 @@
 #!/bin/bash
 
+OPTIONS=$*
+REP_SCR=$(dirname $0)
+FILE_SCR=$(basename $0)
+
+
 echo "tache cron du depot"
 
 echo "GITHUB pull"
-cd /home/.loupnunux/scripts
+cd $REP_SCR
 git pull
 
 echo "execution du script : linux-postinstall"
-/home/.loupnunux/scripts/linux-postinstall/main.sh
+$REP_SCR/linux-postinstall/main.sh
 

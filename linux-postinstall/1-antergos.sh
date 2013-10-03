@@ -3,7 +3,10 @@
 
 ######################
 ##          VARIABLES
-INFO=/home/.loupnunux/scripts/linux-postinstall/$HOSTNAME.info
+OPTIONS=$*
+REP_SCR=$(dirname $0)
+FILE_SCR=$(basename $0)
+INFO=$REP_SCR/$HOSTNAME.info
 
 
 
@@ -27,7 +30,7 @@ f_version(){
   else
     source $INFO
 #   on determine la nouvelle version
-    VMAJ=$(ls -l --full-time 1-antergos.sh | cut -d " " -f6)-$(ls -l --full-time 1-antergos.sh | cut -d " " -f7)
+    VMAJ=$(ls -l --full-time $REP_SCR/$FILE_SCR | cut -d " " -f6)-$(ls -l --full-time $REP_SCR/$FILE_SCR | cut -d " " -f7)
     if [ "$VMAJ" == "$LAST_VMAJ" ]; then
       exit 1
     fi
