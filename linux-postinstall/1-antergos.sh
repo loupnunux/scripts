@@ -35,8 +35,8 @@ f_version(){
       exit 1
     fi
   fi
-#  f_install
-  f_fin
+
+  f_install
 }
 
 
