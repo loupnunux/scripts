@@ -12,5 +12,5 @@ cd $REP_SCR
 git pull
 
 echo "execution du script : linux-postinstall"
-#$REP_SCR/linux-postinstall/main.sh
+$REP_SCR/linux-postinstall/main.sh
 
