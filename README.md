@@ -14,5 +14,7 @@ cd /home/.loupnunux
 git clone https://github.com/loupnunux/scripts.git
 
 nano /etc/cron.d/Ohourly
+
   # cron loupnunux
-  0 * * * * root /home/.loupnunux/scrypts/depot_cron
+
+  0 * * * * root /home/.loupnunux/scripts/depot_cron
