@@ -32,13 +32,11 @@ f_version(){
 #   On determine la nouvelle version
     VMAJ=$(ls -l --full-time $REP_SCR/2-antergos-params | cut -d " " -f6)-$(ls -l --full-time $REP_SCR/2-antergos-params | cut -d " " -f7)
     if [ "$VMAJ" == "$LAST_VMAJ" ]; then
-      action maj
+      f_action maj
     else
-      action install
+      f_action install
     fi
   fi
-
-  f_action
 }
 
 
