@@ -29,34 +29,42 @@ f_version(){
     touch $INFO
   else
     source $INFO
-#   on determine la nouvelle version
-    VMAJ=$(ls -l --full-time $REP_SCR/$FILE_SCR | cut -d " " -f6)-$(ls -l --full-time $REP_SCR/$FILE_SCR | cut -d " " -f7)
+#   On determine la nouvelle version
+    VMAJ=$(ls -l --full-time $REP_SCR/2-antergos-params | cut -d " " -f6)-$(ls -l --full-time $REP_SCR/2-antergos-params | cut -d " " -f7)
     if [ "$VMAJ" == "$LAST_VMAJ" ]; then
-      exit 1
+      action maj
+    else
+      action install
     fi
   fi
 
-  f_install
+  f_action
 }
 
 
 
-f_install() {
+f_action() {
   f_pkg
 
+# Si yaourt n' est pas installe on l install
   if [ ! -e /usr/bin/yaourt ]; then
     sudo pacman -S --noconfirm --force $PKG_PACMAN_YAOURT
   fi
 
-  arch_testpck "$PKG_PACMAN"
-  arch_testpck "$PKG_YAOURT"
-
-  if [ ! -z "$PKG_YES" ]; then
-    sudo yaourt --sucre $PKG_YES
+  if [ "$1" == "install" ]; then
+    arch_testpck "$PKG_PACMAN"
+    arch_testpck "$PKG_YAOURT"
+    if [ ! -z "$PKG_YES" ]; then
+      sudo yaourt --sucre $PKG_YES
+    fi
+  elif [ "$1" == "maj" ]; then
+    sudo yaourt --sucre
   fi
 
+# On regle tous les modules et services
   f_virtualbox
   f_cronie
+  f_ssh
   f_teamview
 
   f_fin
@@ -112,7 +120,7 @@ f_fin() {
   if [ -z $LAST_VMAJ ]; then
     echo "LAST_VMAJ=$VMAJ" >> $INFO
   elif [ "$LAST_VMAJ" != "$VMAJ" ]; then
-#   on change la ligne
+#   On change la ligne
     sed -i 's/^LAST_VMAJ=.*$/LAST_VMAJ='$VMAJ'/g' $INFO
   fi
 }
