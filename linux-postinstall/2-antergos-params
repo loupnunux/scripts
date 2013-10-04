@@ -10,7 +10,7 @@ PKG_PACMAN_YAOURT="base-devel yaourt"
 PKG_PACMAN_BASE="git htop gvfs-smb linux-headers motion openssh openssh-askpass screen unison vim zsh"
 PKG_YAOURT_BASE="puppet rabbitvcs rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar"
 
-PKG_PACMAN_DESKTOP="gparted terminator truecrypt"
+PKG_PACMAN_DESKTOP="gparted libreoffice-base libreoffice-calc libreoffice-draw libreoffice-fr libreoffice-gnome libreoffice-impress libreoffice-math libreoffice-writer terminator truecrypt"
 PKG_YAOURT_DESKTOP="furiusisomount jre keepass multisystem peazip-gtk2 pencil"
 # a supprimer : rexloader-svn
 
