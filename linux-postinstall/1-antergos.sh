@@ -55,8 +55,8 @@ f_action() {
     if [ ! -z "$PKG_YES" ]; then
       sudo yaourt --sucre $PKG_YES
     fi
-  elif [ "$1" == "maj" ]; then
-    sudo yaourt --sucre
+#  elif [ "$1" == "maj" ]; then
+#    sudo yaourt --sucre
   fi
 
 # On regle tous les modules et services
