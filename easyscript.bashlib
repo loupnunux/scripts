@@ -111,14 +111,17 @@ esac
 ###   DECLARATION DES FONCTIONS EXTERNES
 
 menu() {
+  ENTETE="=========================================\n"
+
   log_off
+
   if [ "$1" == "yes" ] || [ "$1" == "no" ]; then
     _test_nb_args "2" "$@"
     while
     if [ "$1" == "yes" ]; then
-      $ECHO "${2} [O/n]${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
+      $ECHO "${ENTETE}${2} [O/n]${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
     elif [ "$1" == "no" ]; then
-      $ECHO "${2} [o/N]${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
+      $ECHO "${ENTETE}${2} [o/N]${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
     fi
     read CHOIX
     do
@@ -135,11 +138,11 @@ menu() {
     done
   elif [ "$1" == "quest" ]; then
     _test_nb_args "2" "$@"
-    $ECHO "${2} ${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
+    $ECHO "${ENTETE}${2} ${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
     read MENU_RESULT
   elif [ "$1" == "list" ]; then
     _test_nb_args "3" "$@"
-    $ECHO "${2}${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
+    $ECHO "${ENTETE}${2}${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
     LIST="$3"
     select CHOIX in $(for i in ${LIST[*]}; do echo ${i%/*} ; done) QUITTER; do
       if [ -z $CHOIX ]; then
@@ -152,7 +155,7 @@ menu() {
     done
   elif [ "$1" == "ls" ]; then
     _test_nb_args "3" "$@"
-    $ECHO "${2}${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
+    $ECHO "${ENTETE}${2}${MOVE_TO_COL}[ ${SETCOLOR_QUEST} ]\n"
     select CHOIX in $(for i in $(ls -1 $3); do echo ${i%/*} ; done) QUITTER; do
       if [ -z $CHOIX ]; then
         continue
