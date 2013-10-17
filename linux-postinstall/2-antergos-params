@@ -25,7 +25,7 @@ PKG_YAOURT_GRAPHIC="makehuman tbo"
 PKG_PACMAN_INTERNET="filezilla firefox firefox-i18n-fr remmina skype thunderbird thunderbird-i18n-fr"
 PKG_YAOURT_INTERNET="pacmanager remmina-plugin-teamviewer teamviewer"
 
-PKG_PACMAN_JEUX="0ad dolphin-emu lib32-libtxc_dxtn libpng12 mpg123 playonlinux steam stuntrally urbanterror warsow"
+PKG_PACMAN_JEUX="0ad desmume dolphin-emu lib32-libtxc_dxtn libpng12 mpg123 playonlinux snes9x snes9x-gtk steam stuntrally urbanterror warsow"
 PKG_YAOURT_JEUX="wakfu"
 
 PKG_PACMAN_MEDIA="audacity avidemux-gtk easytag gtk-recordmydesktop openshot pitivi recordmydesktop vlc xbmc"
