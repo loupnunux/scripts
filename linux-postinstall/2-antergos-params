@@ -7,7 +7,7 @@
 
 PKG_PACMAN_YAOURT="base-devel yaourt"
 
-PKG_PACMAN_BASE="git htop gvfs-smb linux-headers motion openssh openssh-askpass screen unison vim zsh"
+PKG_PACMAN_BASE="git htop gvfs-smb linux-headers motion nmap openssh openssh-askpass screen unison vim zsh"
 PKG_YAOURT_BASE="puppet rabbitvcs rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar"
 
 PKG_PACMAN_DESKTOP="gparted libreoffice-base libreoffice-calc libreoffice-draw libreoffice-fr libreoffice-gnome libreoffice-impress libreoffice-math libreoffice-writer terminator truecrypt"
@@ -25,7 +25,7 @@ PKG_YAOURT_GRAPHIC="makehuman tbo"
 PKG_PACMAN_INTERNET="filezilla firefox firefox-i18n-fr remmina skype thunderbird thunderbird-i18n-fr"
 PKG_YAOURT_INTERNET="pacmanager remmina-plugin-teamviewer teamviewer"
 
-PKG_PACMAN_JEUX="0ad lib32-libtxc_dxtn libpng12 mpg123 playonlinux steam stuntrally urbanterror warsow"
+PKG_PACMAN_JEUX="0ad dolphin-emu lib32-libtxc_dxtn libpng12 mpg123 playonlinux steam stuntrally urbanterror warsow"
 PKG_YAOURT_JEUX="wakfu"
 
 PKG_PACMAN_MEDIA="audacity avidemux-gtk easytag gtk-recordmydesktop openshot pitivi recordmydesktop vlc xbmc"
