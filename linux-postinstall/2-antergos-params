@@ -28,8 +28,8 @@ PKG_YAOURT_INTERNET="pacmanager remmina-plugin-teamviewer teamviewer"
 PKG_PACMAN_JEUX="0ad desmume dolphin-emu lib32-libtxc_dxtn libpng12 mpg123 playonlinux snes9x snes9x-gtk steam stuntrally urbanterror warsow"
 PKG_YAOURT_JEUX="antimicro-git wakfu"
 
-PKG_PACMAN_MEDIA="audacity avidemux-gtk easytag gtk-recordmydesktop openshot pitivi recordmydesktop vlc xbmc"
-PKG_YAOURT_MEDIA="kazam qmplay2 simplescreenrecorder stopmotion"
+PKG_PACMAN_MEDIA="audacity avidemux-gtk easytag gtk-recordmydesktop ogmrip openshot pitivi recordmydesktop vlc xbmc"
+PKG_YAOURT_MEDIA="k9copy kazam qmplay2 simplescreenrecorder stopmotion"
 
 PKG_PACMAN_MTP="libmtp mtpfs"
 PKG_YAOURT_MTP="gmtp"
