@@ -13,7 +13,7 @@ cd /home/.loupnunux
 
 git clone https://github.com/loupnunux/scripts.git
 
-nano /etc/cron.d/Ohourly
+nano /etc/cron.d/0hourly
 
   # cron loupnunux
 
