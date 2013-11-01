@@ -7,7 +7,7 @@
 
 PKG_PACMAN_YAOURT="base-devel yaourt"
 
-PKG_PACMAN_BASE="git htop gvfs-smb linux-headers motion nmap openssh openssh-askpass screen unison vim zsh"
+PKG_PACMAN_BASE="git gpart htop gvfs-smb linux-headers motion nmap openssh openssh-askpass screen testdisk unison vim zsh"
 PKG_YAOURT_BASE="puppet rabbitvcs rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar"
 
 PKG_PACMAN_DESKTOP="gparted libreoffice-base libreoffice-calc libreoffice-draw libreoffice-fr libreoffice-gnome libreoffice-impress libreoffice-math libreoffice-writer terminator truecrypt"
