@@ -27,7 +27,7 @@ f_actions() {
   _test_nb_args "1" "$OPTIONS"
   term "Test process pour $APPS" '[ -z $(pgrep -u $USER $APPS) ]'
 
-  $RUN_SYNC $OPTIONS
+  warn "Synchro en cours" "$RUN_SYNC $OPTIONS"
 }
 
 
