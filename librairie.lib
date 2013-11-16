@@ -1,3 +1,14 @@
-source easyscript.bashlib
-#source easyscript-test.bashlib
+######################
+###          VARIABLES
+OPTIONS=$*
+NB_OPTIONS=$#
+REP_SCR=$(dirname $0)
+FILE_SCR=$(basename $0)
+APPS="unison"
+RUN_SYNC="/usr/bin/unison"
+
+
+
+source $REP_SCR/easyscript.bashlib
+#source $REP_SCR/easyscript-test.bashlib
 
