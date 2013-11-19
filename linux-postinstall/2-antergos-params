@@ -19,7 +19,7 @@ PKG_YAOURT_EDUC="childsplay childsplay-alphabet-sounds gamine pysycache pysycach
 
 PKG_PACMAN_GNOME="gnome-shell-extensions gnome-tweak-tool"
 
-PKG_PACMAN_GRAPHIC="blender darktable digikam eog eog-plugins gimp gimp-plugin-gmic"
+PKG_PACMAN_GRAPHIC="blender darktable digikam eog eog-plugins gimp gimp-plugin-gmic simple-scan"
 PKG_YAOURT_GRAPHIC="makehuman tbo"
 
 PKG_PACMAN_INTERNET="filezilla firefox firefox-i18n-fr remmina skype thunderbird thunderbird-i18n-fr"
